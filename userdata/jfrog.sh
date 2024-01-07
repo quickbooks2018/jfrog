@@ -6,6 +6,9 @@ curl -fsSL https://get.docker.com -o install-docker.sh
 sh install-docker.sh
 
 # Downloading JFrog Artifactory
+curl -o docker-compose.yaml https://raw.githubusercontent.com/quickbooks2018/jfrog/main/docker-compose.yaml
+
+# Creating Docker Compose File
 cat <<EOF > docker-compose.yml
 services:
   # https://docker.bintray.io/ui/artifactSearchResults?name=artifactory-oss&type=artifacts
