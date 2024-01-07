@@ -10,3 +10,18 @@
 ```bash
 docker logs -f artifactory 
 ```
+
+- terraform backend
+```bash
+aws s3api create-bucket --bucket terraform-cloudgeeks --region us-east-1
+aws s3api put-bucket-versioning --bucket terraform-cloudgeeks --versioning-configuration Status=Enabled 
+```
+
+- base64 encode
+```bash
+cat jfrog.sh | base64 -w 0
+cat jfrog.sh | base64 -w 0 > jfrog.base64
+
+cat jenkins.sh | base64 -w 0
+cat jenkins.sh | base64 -w 0 > jenkins.base64
+```
