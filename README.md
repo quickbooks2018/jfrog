@@ -37,6 +37,42 @@ cat jenkins.sh | base64 -w 0 > jenkins.base64
 - http://10.60.100.187:8082/
 - check allow http connection
 
+- In jenkins Jfrog-cli you will find in tools
+
+- Sample pipeline
+```bash
+pipeline {
+    agent any
+    tools {
+        jfrog 'jfrog-cli'
+    }
+    stages {
+        stage('Testing') {
+            steps {
+                // Show the installed version of JFrog CLI.
+                jf '-v'
+
+                // Show the configured JFrog Platform instances.
+                jf 'c show'
+
+                // Ping Artifactory.
+                jf 'rt ping'
+
+                // Create a file and upload it to a repository named 'example-repo-local' in Artifactory
+                sh 'touch test-file'
+                jf 'rt u test-file example-repo-local/'
+
+                // Publish the build-info to Artifactory.
+                jf 'rt bp'
+
+                // Download the test-file
+                jf 'rt dl example-repo-local/test-file'
+            }
+        }
+    }
+}
+```
+
 - Jfrog cli installation
 ```bash
 # Download the JFrog CLI binary
