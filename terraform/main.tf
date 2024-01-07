@@ -185,7 +185,7 @@ module "jenkins-ec2" {
   instance_type               = "t3a.medium"
   associate_public_ip_address = true
   subnet_id                   = module.vpc.public_subnets[0]
-  vpc_security_group_ids      = [module.jfrog-security-group.security_group_id]
+  vpc_security_group_ids      = [module.jenkins-security-group.security_group_id]
   iam_instance_profile        = module.iam-instance-profile.ec2_instance_profile_name
   disable_api_termination     = true
   root_block_device = [
