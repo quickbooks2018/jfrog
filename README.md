@@ -5,3 +5,8 @@
 
 - default user: admin
 - default password: password
+
+- logs of artifactory
+```bash
+docker logs -f artifactory 
+```
