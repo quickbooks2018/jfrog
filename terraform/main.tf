@@ -170,9 +170,7 @@ module "jfrog-ec2" {
       volume_size = 30
     },
   ]
-  user_data_base64            = <<-EOF
-IyEvYmluL2Jhc2gKYXB0IHVwZGF0ZSAteQoKIyBEb2NrZXIgSW5zdGFsbGF0aW9uCmN1cmwgLWZzU0wgaHR0cHM6Ly9nZXQuZG9ja2VyLmNvbSAtbyBpbnN0YWxsLWRvY2tlci5zaApzaCBpbnN0YWxsLWRvY2tlci5zaAoKIyBEb3dubG9hZGluZyBKRnJvZyBBcnRpZmFjdG9yeQpjdXJsIC1vIGRvY2tlci1jb21wb3NlLnlhbWwgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3F1aWNrYm9va3MyMDE4L2pmcm9nL21haW4vZG9ja2VyLWNvbXBvc2UueWFtbAoKZG9ja2VyIGNvbXBvc2UgdXAgLWQKCiMgRW5kIG9mIFNjcmlwdA==
-    EOF
+  user_data  = file("../userdata/jfrog.sh")
 }
 
 module "jenkins-ec2" {

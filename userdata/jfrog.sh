@@ -7,7 +7,7 @@ sh install-docker.sh
 
 # Downloading JFrog Artifactory
 curl -o docker-compose.yaml https://raw.githubusercontent.com/quickbooks2018/jfrog/main/docker-compose.yaml
-
+sleep 3
 docker compose up -d
 
 # End of Script
