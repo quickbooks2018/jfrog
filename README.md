@@ -1,7 +1,7 @@
 ### JFROG ARTIFACTORY
 
 - https://docker.bintray.io/ui/artifactSearchResults?name=artifactory-oss&type=artifacts
-
+- https://jfrog.com/help/r/jfrog-installation-setup-documentation/install-artifactory-single-node-with-docker
 - default user: admin
 - default password: password
 

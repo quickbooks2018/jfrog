@@ -13,7 +13,7 @@ cat <<EOF > docker-compose.yml
 services:
   # https://docker.bintray.io/ui/artifactSearchResults?name=artifactory-oss&type=artifacts
   artifactory:
-    image: docker.bintray.io/jfrog/artifactory-oss:latest
+    image: docker.bintray.io/jfrog/artifactory-oss:7.9.2
     container_name: artifactory
     ports:
       - "8082:8082"
@@ -28,7 +28,7 @@ services:
 
   # https://hub.docker.com/_/postgres/tags
   postgres:
-    image: postgres:latest
+    image: postgres:15.5-alpine
     container_name: postgres
     environment:
       - POSTGRES_DB=artifactory
